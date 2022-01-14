@@ -14,6 +14,7 @@ local options = {
   splitbelow = true,
   splitright = true,
   tabstop = 2,
+  termguicolors = true,
   wrap = false,
 }
 
