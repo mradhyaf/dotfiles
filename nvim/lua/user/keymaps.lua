@@ -4,16 +4,16 @@ local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 -- Modes
---  normal_mode = "n",
---  insert_mode = "i",
---  visual_mode = "v",
---  visual_block_mode = "x",
---  term_mode = "t",
---  command_mode "c",
+normal_mode = "n",
+insert_mode = "i",
+visual_mode = "v",
+visual_block_mode = "x",
+term_mode = "t",
+command_mode "c",
 
 -- Remap navigation and affected keys for colemak
 keymap("", "n", "j", opts)                                                                                                              
-keymap("", "N", "J", opts)                                                                                                              
+keymap("", "N", "J", opts)                                                                                                        
 keymap("", "e", "k", opts)                                                                                                              
 keymap("", "E", "K", opts)                                                                                     
 keymap("", "i", "l", opts)                                                                                     
