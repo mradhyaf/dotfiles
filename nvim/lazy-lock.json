@@ -6,7 +6,7 @@
   "mason-lspconfig.nvim": { "branch": "main", "commit": "f2acd4a21db1ca0a12559e7a9f7cdace3bdbfb09" },
   "mason.nvim": { "branch": "main", "commit": "e2f7f9044ec30067bc11800a9e266664b88cda22" },
   "nvim-cmp": { "branch": "main", "commit": "ae644feb7b67bf1ce4260c231d1d4300b19c6f30" },
-  "nvim-lspconfig": { "branch": "master", "commit": "a67bc39aaa4f1e13212c5022a561120846eaef27" },
-  "nvim-treesitter": { "branch": "master", "commit": "db92f60ed0c50e747155d685e977b18327f20b3a" },
+  "nvim-lspconfig": { "branch": "master", "commit": "ad32182cc4a03c8826a64e9ced68046c575fdb7d" },
+  "nvim-treesitter": { "branch": "master", "commit": "3de418e73d5b912096229aaeea8bb7aef5094e0d" },
   "rose-pine": { "branch": "main", "commit": "cf8de969c49b1d879091ae9048715f4aacd4f9fb" }
 }

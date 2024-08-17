@@ -1,3 +1,4 @@
+-- Auto switch to absolute line numbers on insert mode
 vim.api.nvim_create_augroup("numbertoggle", { clear = true })
 
 vim.api.nvim_create_autocmd({"BufEnter","FocusGained","InsertLeave","WinEnter"},
@@ -21,4 +22,9 @@ vim.api.nvim_create_autocmd({"BufLeave","FocusLost","InsertEnter","WinLeave"},
         end
     end
 })
+
+-- Automatically go into insert mode when opening a terminal
+vim.api.nvim_create_augroup("terminsert", { clear = true })
+-- autocmd TermOpen * startinsert
+vim.api.nvim_create_autocmd({"TermOpen"}, { command = "startinsert" })
 
