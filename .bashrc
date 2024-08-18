@@ -47,5 +47,7 @@ HISTSIZE= HISTFILESIZE= # Infinite history
 alias vim="nvim"
 alias mkdir="mkdir -pv"
 alias ls="ls -hN --color=auto --group-directories-first"
+alias la="ls -a"
+alias ll="la -l"
 alias grep="grep --color=auto"
 alias apt="dnf" # For fedora
