@@ -12,6 +12,7 @@ fi
 export PATH
 export EDITOR="/bin/nvim"
 export VISUAL="/bin/nvim"
+export GOPATH="$HOME/go"
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
