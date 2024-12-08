@@ -38,8 +38,8 @@ return {
                     ['<C-Space>'] = cmp.mapping.complete(),
 
                     -- Navigate between snippet placeholder
-                    ['<C-f>'] = cmp_action.vim_snippet_jump_forward(),
-                    ['<C-b>'] = cmp_action.vim_snippet_jump_backward(),
+                    ['<Tab>'] = cmp_action.vim_snippet_jump_forward(),
+                    ['<S-Tab>'] = cmp_action.vim_snippet_jump_backward(),
 
                     -- Scroll up and down in the completion documentation
                     ['<C-u>'] = cmp.mapping.scroll_docs(-4),
