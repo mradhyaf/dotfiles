@@ -1,0 +1,29 @@
+# Everforest Dark Medium by sainnhe
+
+[cursor]
+color=2d353b d3c6aa # bg0 fg
+
+[colors]
+background=2d353b # bg0
+foreground=d3c6aa # fg
+
+selection-foreground=d3c6aa # fg
+selection-background=514045 # bg_visual
+
+regular0=7a8478  # gray0
+regular1=e67e80  # red
+regular2=a7c080  # green
+regular3=dbbc7f  # yellow
+regular4=7fbbb3  # blue
+regular5=d699b6  # magenta
+regular6=83c092  # aqua
+regular7=9da9a0  # gray2
+
+bright0=9da9a0  # gray2
+bright1=e67e80  # red
+bright2=a7c080  # green
+bright3=dbbc7f  # yellow
+bright4=7fbbb3  # blue
+bright5=d699b6  # magenta
+bright6=83c092  # aqua
+bright7=7a8478  # gray0
