@@ -17,3 +17,8 @@ vim.keymap.set("v", "<C-/>", "gc", { remap = true })
 
 -- Jump to a subject
 vim.keymap.set("n", "<C-Return>", "<C-]>")
+
+-- tmux <Ctrl> prefix is limited, might need extended keys support
+-- duplicate dysfunctional keys with <Alt> prefix
+vim.keymap.set("n", "<A-/>", "gcc", { remap = true })
+vim.keymap.set("v", "<A-/>", "gc", { remap = true })
