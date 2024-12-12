@@ -52,4 +52,5 @@ alias cp="cp -p" # Keep file permissions
 alias ls="ls -hN --color=auto --group-directories-first"
 alias la="ls -a"
 alias ll="la -l"
+alias lns="ln -s"
 alias grep="grep --color=auto"
