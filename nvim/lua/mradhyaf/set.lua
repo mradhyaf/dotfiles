@@ -1,21 +1,30 @@
-vim.opt.guicursor = ""
+local opt = vim.opt
 
-vim.opt.nu = true
+opt.number = true
+opt.numberwidth = 2
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
+opt.fillchars = { eob = " " }
+opt.ignorecase = true
+opt.smartcase = true
 
-vim.opt.smartindent = true
+opt.tabstop = 4
+opt.softtabstop = 4
+opt.shiftwidth = 4
+opt.expandtab = true
+opt.smartindent = true
 
-vim.opt.wrap = false
+opt.scrolloff = 10
+opt.colorcolumn = "80"
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
+opt.backup = false
+opt.undodir = os.getenv("HOME") .. "/.local/state/nvim/undodir"
+opt.undofile = true
 
-vim.opt.scrolloff = 16
+opt.updatetime = 50
 
-vim.opt.updatetime = 500
+opt.wrap = false
+-- go to previous/next line with h,l,left arrow and right arrow
+-- when cursor reaches end/beginning of line
+opt.whichwrap:append "<>[]hl"
 
-vim.opt.colorcolumn = "80"
+opt.laststatus = 3

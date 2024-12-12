@@ -4,16 +4,10 @@ return {
         build = ':TSUpdate',
         opts = {
             ensure_installed = {
-                "c",
-                "cpp",
-                "go",
-                "java",
                 "lua",
-                "markdown",
-                "markdown_inline",
+                "luadoc",
                 "vim",
-                "vimdoc",
-                "query",
+                "vimdoc"
             },
             sync_install = false,
             auto_install = true,

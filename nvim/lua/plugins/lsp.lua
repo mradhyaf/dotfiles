@@ -32,7 +32,10 @@ return {
                     ['<C-j>'] = cmp.mapping.select_next_item({behavior = 'select'}),
 
                     -- `Enter` key to confirm completion
-                    ['<CR>'] = cmp.mapping.confirm({select = false}),
+                    ['<CR>'] = cmp.mapping.confirm({
+                        behavior = cmp.ConfirmBehavior.Insert,
+                        select = false
+                    }),
 
                     -- Ctrl+Space to trigger completion menu
                     ['<C-Space>'] = cmp.mapping.complete(),
@@ -42,8 +45,8 @@ return {
                     ['<S-Tab>'] = cmp_action.vim_snippet_jump_backward(),
 
                     -- Scroll up and down in the completion documentation
-                    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-                    ['<C-d>'] = cmp.mapping.scroll_docs(4),
+                    ['<C-u>'] = cmp.mapping.scroll_docs(-2),
+                    ['<C-d>'] = cmp.mapping.scroll_docs(2),
                 }),
                 snippet = {
                     expand = function(args)

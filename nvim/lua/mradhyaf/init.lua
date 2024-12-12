@@ -1,8 +1,8 @@
 -- My own stuff
 require("mradhyaf.set")
-require("mradhyaf.remap")
-require("mradhyaf.auto")
-require("mradhyaf.cmd")
+require("mradhyaf.keymap")
+require("mradhyaf.autocmd")
+require("mradhyaf.terminal")
 
 -- Plugins
 require("mradhyaf.lazy")
