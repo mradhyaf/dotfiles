@@ -47,7 +47,3 @@ map("i", "<C-S-CR>", "<Esc>O", { desc = "begin new lin below current line" })
 
 map("v", "J", ":m '>+1<CR>gv=gv", { desc = "shift line down" })
 map("v", "K", ":m '<-2<CR>gv=gv", { desc = "shift line up" })
-
--- [Terminal]
-map({ "i", "n", "v" }, "<C-A-t>", cmd("botright terminal"))
-map("t", "<C-A-t>", cmd("hide"))
