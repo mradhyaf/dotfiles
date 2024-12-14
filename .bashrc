@@ -29,8 +29,8 @@ export GOPATH="$HOME/go"
 # unset rc
 
 # Shell prompt
-if ! type __git_ps1 &> /dev/null && [ -e /usr/share/git-core/contrib/completion/git-prompt.sh ]; then
-    . /usr/share/git-core/contrib/completion/git-prompt.sh
+if ! type __git_ps1 &> /dev/null && [ -e /usr/share/git/completion/git-prompt.sh ]; then
+    . /usr/share/git/completion/git-prompt.sh
 fi
 if type __git_ps1 &> /dev/null; then
     export GIT_PS1_SHOWDIRTYSTATE=1
