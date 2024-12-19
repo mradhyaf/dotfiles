@@ -13,7 +13,6 @@ export PATH
 export EDITOR="/bin/nvim"
 export VISUAL="/bin/nvim"
 export MANPAGER="nvim +Man!"
-export GOPATH="$HOME/go"
 
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
@@ -54,3 +53,11 @@ alias la="ls -a"
 alias ll="la -l"
 alias lns="ln -s"
 alias grep="grep --color=auto"
+
+# rsync sane defaults
+cpr() {
+  rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 "$@"
+}
+mvr() {
+  rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 --remove-source-files "$@"
+}
