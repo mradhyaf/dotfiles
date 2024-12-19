@@ -1,4 +1,10 @@
 require("mradhyaf")
 
 -- WIP plugins
-require("tman")
+local plugins = {
+    "tman",
+}
+
+for _, mod in ipairs(plugins) do
+    local ok, _ = pcall(require, mod)
+end
