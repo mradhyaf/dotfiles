@@ -26,5 +26,3 @@ opt.wrap = false
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
 opt.whichwrap:append "<>[]hl"
-
-opt.laststatus = 3

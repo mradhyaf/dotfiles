@@ -16,20 +16,10 @@ map("n", "<A-k>", "<C-w>k", { desc = "switch window up" })
 map("n", "<C-u>", "<C-u>zz")
 map("n", "<C-d>", "<C-d>zz")
 
--- Movement in insert mode
-map("i", "<C-S-H>", "<ESC>^i", { desc = "move beginning of line" })
-map("i", "<C-S-L>", "<End>", { desc = "move end of line" })
-map("i", "<C-h>", "<Left>", { desc = "move left" })
-map("i", "<C-l>", "<Right>", { desc = "move right" })
-map("i", "<C-j>", "<Down>", { desc = "move down" })
-map("i", "<C-k>", "<Up>", { desc = "move up" })
-
-map("n", "<C-CR>", "<C-]>", { desc = "jump to tag" })
-
 map("n", "<leader>pv", cmd.Ex, { desc = "open file browser" })
 
-map("i", "<C-h>", "<Esc>", { desc = "escape" })
-map("t", "<A-c>", "<C-\\><C-N>", { desc = "exit terminal mode" })
+map("i", "<C-c>", "<Esc>", { desc = "escape" })
+map("t", "<A-c>", "<C-\\><C-n>", { desc = "exit terminal mode" })
 
 
 -- [Editing]
