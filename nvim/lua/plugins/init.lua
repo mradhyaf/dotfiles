@@ -2,29 +2,25 @@ return {
   "nvim-lua/plenary.nvim",
 
   {
-    'sainnhe/everforest',
+    "sainnhe/everforest",
     lazy = false,
     priority = 1000,
     config = function()
-        -- Optionally configure and load the colorscheme
-        -- directly inside the plugin declaration.
-        vim.g.everforest_enable_italic = true
-        vim.g.everforest_background = 'hard' -- 'hard'|'medium'|'soft'
-        vim.cmd.set('background=dark')
-        vim.cmd.colorscheme('everforest')
+      -- Optionally configure and load the colorscheme
+      -- directly inside the plugin declaration.
+      vim.g.everforest_enable_italic = true
+      vim.g.everforest_background = "hard" -- 'hard'|'medium'|'soft'
+      vim.cmd.set "background=dark"
+      vim.cmd.colorscheme "everforest"
 
-        vim.api.nvim_create_user_command("Dark",
-            function()
-                vim.cmd("set background=dark")
-            end,
-            {})
+      vim.api.nvim_create_user_command("Dark", function()
+        vim.cmd "set background=dark"
+      end, {})
 
-        vim.api.nvim_create_user_command("Light",
-            function()
-                vim.cmd("set background=light")
-            end,
-            {})
-    end
+      vim.api.nvim_create_user_command("Light", function()
+        vim.cmd "set background=light"
+      end, {})
+    end,
   },
 
   {
@@ -39,9 +35,9 @@ return {
   -- formatting!
   {
     "stevearc/conform.nvim",
-    opts = {
-      formatters_by_ft = { lua = { "stylua" } },
-    },
+    opts = function()
+      return require "configs.conform"
+    end,
   },
 
   -- git stuff
@@ -137,13 +133,13 @@ return {
   },
 
   {
-    'mradhyaf/floating-terminal.nvim',
-    branch = 'main',
+    "mradhyaf/floating-terminal.nvim",
+    branch = "main",
     config = function()
-        local fterm = require "floating-terminal"
-        vim.api.nvim_create_user_command("Fterm", fterm.show, {})
-        vim.keymap.set({ "n", "i" }, "<A-t>", fterm.show)
-        vim.keymap.set({ "t" }, "<A-t>", fterm.hide)
-    end
-  }
+      local fterm = require "floating-terminal"
+      vim.api.nvim_create_user_command("Fterm", fterm.show, {})
+      vim.keymap.set({ "n", "i" }, "<A-t>", fterm.show)
+      vim.keymap.set({ "t" }, "<A-t>", fterm.hide)
+    end,
+  },
 }

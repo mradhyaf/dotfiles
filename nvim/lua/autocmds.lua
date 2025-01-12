@@ -30,24 +30,23 @@ autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
 -- Auto switch to absolute line numbers on insert mode
 augroup("numbertoggle", { clear = true })
 
-autocmd({ "BufEnter", "FocusGained", "InsertLeave", "WinEnter" },
-    {
-        group    = "numbertoggle",
-        pattern  = "*",
-        callback = function()
-            if vim.wo.number and vim.fn.mode() ~= "i" then
-                vim.wo.relativenumber = true
-            end
-        end
-    })
+autocmd({ "BufEnter", "FocusGained", "InsertLeave", "WinEnter" }, {
+  group = "numbertoggle",
+  pattern = "*",
+  callback = function()
+    if vim.wo.number and vim.fn.mode() ~= "i" then
+      vim.wo.relativenumber = true
+    end
+  end,
+})
 
-autocmd({ "BufLeave", "FocusLost", "InsertEnter", "WinLeave" },
-    {
-        group    = "numbertoggle",
-        pattern  = "*",
-        callback = function()
-            if vim.wo.number then
-                vim.wo.relativenumber = false
-            end
-        end
-    })
+autocmd({ "BufLeave", "FocusLost", "InsertEnter", "WinLeave" }, {
+  group = "numbertoggle",
+  pattern = "*",
+  callback = function()
+    if vim.wo.number then
+      vim.wo.relativenumber = false
+    end
+  end,
+})
+

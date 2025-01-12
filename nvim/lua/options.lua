@@ -35,7 +35,7 @@ o.splitright = true
 o.timeoutlen = 400
 opt.backup = false
 o.undofile = true
-opt.undodir = os.getenv("HOME") .. "/.local/state/nvim/undodir"
+opt.undodir = os.getenv "HOME" .. "/.local/state/nvim/undodir"
 
 opt.scrolloff = 10
 opt.colorcolumn = "80"

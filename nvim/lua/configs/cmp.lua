@@ -1,10 +1,10 @@
 local cmp = require "cmp"
 
-local window_config = cmp.config.window.bordered({
+local window_config = cmp.config.window.bordered {
   -- border = { "🭽", "▔" , "🭾", "▕", "🭿", "▁", "🭼", "▏"},
-  winhighlight = 'Normal:Normal,FloatBorder:WinSeparator,CursorLine:Visual,Search:None',
+  winhighlight = "Normal:Normal,FloatBorder:WinSeparator,CursorLine:Visual,Search:None",
   max_height = 20,
-})
+}
 
 local options = {
   completion = { completeopt = "menu,menuone" },
@@ -17,7 +17,7 @@ local options = {
 
   window = {
     completion = window_config,
-    documentation = window_config
+    documentation = window_config,
   },
 
   mapping = {
