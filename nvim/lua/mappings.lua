@@ -11,6 +11,8 @@ map("n", "<A-o>", "<C-w>o", { desc = "current window only" })
 map("n", "<A-q>", "<C-w>q", { desc = "close window" })
 
 map("n", "<A-b>", "<cmd>bnext<CR>", { desc = "next buffer" })
+map("n", "<A-B>", "<cmd>bNext<CR>", { desc = "prev buffer" })
+map("i", "<A-l>", "<Right>")
 
 -- [Remap default behaviors]
 -- Center cursor vertically after pgUp and pgDn
@@ -37,8 +39,10 @@ map("i", "<C-S-CR>", "<Esc>O", { desc = "begin new line below current line" })
 map("v", "J", ":m '>+1<CR>gv=gv", { desc = "shift line down" })
 map("v", "K", ":m '<-2<CR>gv=gv", { desc = "shift line up" })
 
-vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "Telescope find files" })
-vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", { desc = "Telescope live grep" })
-vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "Telescope buffers" })
-vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Telescope help tags" })
-vim.keymap.set("n", "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Telescope current buffer" })
+-- Telescope
+map("n", "<leader>t", "<cmd>Telescope<CR>", { desc = "Telescope" })
+map("n", "<leader>fk", "<cmd>Telescope keymaps<CR>", { desc = "Telescope find keymaps" })
+map("n", "<leader>ff", "<cmd>Telescope find_files<CR>", { desc = "Telescope find files" })
+map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", { desc = "Telescope buffers" })
+map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", { desc = "Telescope help tags" })
+map("n", "<leader>fz", "<cmd>Telescope current_buffer_fuzzy_find<CR>", { desc = "Telescope current buffer" })

@@ -24,6 +24,13 @@ return {
   },
 
   {
+    "folke/zen-mode.nvim",
+    opts = function()
+      return require "configs.zen-mode"
+    end,
+  },
+
+  {
     "lukas-reineke/indent-blankline.nvim",
     event = "User FilePost",
     main = "ibl",
