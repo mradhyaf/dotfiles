@@ -3,10 +3,12 @@ local cmp = require "cmp"
 local window_config = cmp.config.window.bordered {
   -- border = { "🭽", "▔" , "🭾", "▕", "🭿", "▁", "🭼", "▏"},
   winhighlight = "Normal:Normal,FloatBorder:WinSeparator,CursorLine:Visual,Search:None",
+  max_width = 20,
   max_height = 20,
 }
 
 local options = {
+  view = { docs = { auto_open = false } },
   completion = { completeopt = "menu,menuone" },
 
   snippet = {
@@ -25,8 +27,16 @@ local options = {
     ["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-d>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
-    ["<C-Space>"] = cmp.mapping.complete(),
-    ["<C-e>"] = cmp.mapping.close(),
+    ["<C-Space>"] = cmp.mapping(function()
+      if cmp.visible_docs() then
+        cmp.close_docs()
+      elseif cmp.visible() then
+        cmp.open_docs()
+      else
+        cmp.complete()
+      end
+    end, { "i" }),
+    ["<C-c>"] = cmp.mapping.close(),
 
     ["<CR>"] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Insert,

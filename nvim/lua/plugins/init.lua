@@ -71,6 +71,15 @@ return {
     end,
   },
 
+  -- Incomplete jdtls configuration
+  -- {
+  --   "mfussenegger/nvim-jdtls",
+  --   ft = { "java" },
+  --   config = function()
+  --     require "configs.jdtls"
+  --   end,
+  -- },
+
   -- load luasnips + cmp related in insert mode only
   {
     "hrsh7th/nvim-cmp",
