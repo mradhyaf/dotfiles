@@ -49,4 +49,3 @@ autocmd({ "BufLeave", "FocusLost", "InsertEnter", "WinLeave" }, {
     end
   end,
 })
-

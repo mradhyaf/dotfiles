@@ -37,8 +37,8 @@ opt.backup = false
 o.undofile = true
 opt.undodir = os.getenv "HOME" .. "/.local/state/nvim/undodir"
 
-opt.scrolloff = 10
-opt.colorcolumn = "80"
+o.scroll = 8
+opt.scrolloff = 8
 o.pumheight = 10
 
 -- interval for writing swap file to disk, also used by gitsigns
@@ -54,8 +54,8 @@ g.loaded_python3_provider = 0
 g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
--- add binaries installed by mason.nvim to path
+-- add binaries installed by package managers to path
 local is_windows = vim.fn.has "win32" ~= 0
 local sep = is_windows and "\\" or "/"
 local delim = is_windows and ";" or ":"
-vim.env.PATH = table.concat({ vim.fn.stdpath "data", "mason", "bin" }, sep) .. delim .. vim.env.PATH
+vim.env.PATH = table.concat({ vim.fn.getenv "HOME", ".bun", "bin" }, sep) .. delim .. vim.env.PATH

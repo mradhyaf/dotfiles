@@ -1,8 +1,7 @@
-local M = {}
 local map = vim.keymap.set
 
 -- export on_attach & capabilities
-M.on_attach = function(_, bufnr)
+local on_attach = function(_, bufnr)
   local function opts(desc)
     return { buffer = bufnr, desc = "LSP " .. desc }
   end
@@ -26,15 +25,14 @@ M.on_attach = function(_, bufnr)
 end
 
 -- disable semanticTokens
-M.on_init = function(client, _)
+local on_init = function(client, _)
   if client.supports_method "textDocument/semanticTokens" then
     client.server_capabilities.semanticTokensProvider = nil
   end
 end
 
-M.capabilities = vim.lsp.protocol.make_client_capabilities()
-
-M.capabilities.textDocument.completion.completionItem = {
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem = {
   documentationFormat = { "markdown", "plaintext" },
   snippetSupport = true,
   preselectSupport = true,
@@ -52,36 +50,6 @@ M.capabilities.textDocument.completion.completionItem = {
   },
 }
 
-M.defaults = function()
-  require("lspconfig").lua_ls.setup {
-    on_attach = M.on_attach,
-    capabilities = M.capabilities,
-    on_init = M.on_init,
-
-    settings = {
-      Lua = {
-        diagnostics = {
-          globals = { "vim" },
-        },
-        workspace = {
-          library = {
-            vim.fn.expand "$VIMRUNTIME/lua",
-            vim.fn.expand "$VIMRUNTIME/lua/vim/lsp",
-            vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua/lazy",
-            "${3rd}/luv/library",
-          },
-          maxPreload = 100000,
-          preloadFileSize = 10000,
-        },
-      },
-    },
-  }
-
-  require("lspconfig").clangd.setup {
-    on_attach = M.on_attach,
-    capabilities = M.capabilities,
-    on_init = M.on_init,
-  }
+return function(opts)
+  return vim.tbl_deep_extend("force", { on_attach = on_attach, on_init = on_init, capabilities = capabilities }, opts)
 end
-
-return M
