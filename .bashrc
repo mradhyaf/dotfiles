@@ -42,7 +42,6 @@ else
     PS1='\[\e[1;2m\][\[\e[0;1;36m\]\u\[\e[0m\] in \[\e[38;5;73;4m\]\W\[\e[0;1;2m\]]\[\e[0m\]\$ '
 fi
 
-shopt -s autocd # cd into directory by only typing directory name
 HISTSIZE= HISTFILESIZE= # Infinite history
 # Aliases
 alias vim="nvim"
