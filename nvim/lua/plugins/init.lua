@@ -6,21 +6,42 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      require "configs.everforest"
+      require("configs.everforest")
     end,
   },
+
+  "nvim-tree/nvim-web-devicons",
 
   {
     "nvim-tree/nvim-tree.lua",
     opts = function()
-      return require "configs.nvim-tree"
+      return require("configs.nvim-tree")
+    end,
+  },
+
+  {
+    "Bekaboo/dropbar.nvim",
+    -- optional, for fuzzy finding
+    -- dependencies = {
+    --   "nvim-telescope/telescope-fzf-native.nvim",
+    --   build = "make"
+    -- },
+    opts = {},
+  },
+
+  "Bekaboo/deadcolumn.nvim",
+
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = function()
+      return require("configs.lualine")
     end,
   },
 
   {
     "folke/zen-mode.nvim",
     opts = function()
-      return require "configs.zen-mode"
+      return require("configs.zen-mode")
     end,
   },
 
@@ -29,7 +50,7 @@ return {
     event = "User FilePost",
     main = "ibl",
     opts = function()
-      return require "configs.ibl"
+      return require("configs.ibl")
     end,
   },
 
@@ -37,7 +58,7 @@ return {
   {
     "stevearc/conform.nvim",
     opts = function()
-      return require "configs.conform"
+      return require("configs.conform")
     end,
   },
 
@@ -53,18 +74,25 @@ return {
     "neovim/nvim-lspconfig",
     event = "User FilePost",
     config = function()
-      require "configs.lsp"
+      require("configs.lsp")
     end,
   },
 
-  -- Incomplete jdtls configuration
   -- {
   --   "mfussenegger/nvim-jdtls",
   --   ft = { "java" },
-  --   opts = function()
+  --   config = function()
   --     require "configs.lsp.jdtls"
   --   end,
   -- },
+
+  {
+    "williamboman/mason.nvim",
+    cmd = { "Mason" },
+    opts = function()
+      return require("configs.mason")
+    end,
+  },
 
   -- load luasnips + cmp related in insert mode only
   {
@@ -78,7 +106,7 @@ return {
         opts = { history = true, updateevents = "TextChanged,TextChangedI" },
         config = function(_, opts)
           require("luasnip").config.set_config(opts)
-          require "configs.luasnip"
+          require("configs.luasnip")
         end,
       },
 
@@ -93,7 +121,7 @@ return {
           require("nvim-autopairs").setup(opts)
 
           -- setup cmp for autopairs
-          local cmp_autopairs = require "nvim-autopairs.completion.cmp"
+          local cmp_autopairs = require("nvim-autopairs.completion.cmp")
           require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
         end,
       },
@@ -108,8 +136,14 @@ return {
       },
     },
     opts = function()
-      return require "configs.cmp"
+      return require("configs.cmp")
     end,
+  },
+
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    opts = {},
   },
 
   {
@@ -117,7 +151,7 @@ return {
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     cmd = "Telescope",
     opts = function()
-      return require "configs.telescope"
+      return require("configs.telescope")
     end,
   },
 
@@ -127,7 +161,7 @@ return {
     cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
     build = ":TSUpdate",
     opts = function()
-      return require "configs.treesitter"
+      return require("configs.treesitter")
     end,
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
@@ -138,7 +172,7 @@ return {
     "mradhyaf/floating-terminal.nvim",
     branch = "main",
     config = function()
-      local fterm = require "floating-terminal"
+      local fterm = require("floating-terminal")
       vim.api.nvim_create_user_command("Fterm", fterm.show, {})
       vim.keymap.set({ "n", "i" }, "<A-t>", fterm.show)
       vim.keymap.set({ "t" }, "<A-t>", fterm.hide)

@@ -27,15 +27,16 @@ o.numberwidth = 2
 o.ruler = false
 
 -- -- disable nvim intro
-opt.shortmess:append "sI"
+opt.shortmess:append("sI")
 
 o.signcolumn = "yes"
+o.colorcolumn = "80,120"
 o.splitbelow = true
 o.splitright = true
 o.timeoutlen = 400
 opt.backup = false
 o.undofile = true
-opt.undodir = os.getenv "HOME" .. "/.local/state/nvim/undodir"
+opt.undodir = os.getenv("HOME") .. "/.local/state/nvim/undodir"
 
 o.scroll = 8
 opt.scrolloff = 8
@@ -46,7 +47,7 @@ o.updatetime = 250
 
 -- go to previous/next line with h,l,left arrow and right arrow
 -- when cursor reaches end/beginning of line
-opt.whichwrap:append "<>[]hl"
+opt.whichwrap:append("<>[]hl")
 
 -- disable some default providers
 g.loaded_node_provider = 0
@@ -54,8 +55,10 @@ g.loaded_python3_provider = 0
 g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
--- add binaries installed by package managers to path
-local is_windows = vim.fn.has "win32" ~= 0
-local sep = is_windows and "\\" or "/"
-local delim = is_windows and ";" or ":"
-vim.env.PATH = table.concat({ vim.fn.getenv "HOME", ".bun", "bin" }, sep) .. delim .. vim.env.PATH
+-- add binaries installed by package managers (bun and mason) to path
+local delim = vim.fn.has("win32") ~= 0 and ";" or ":"
+vim.env.PATH = vim.fs.joinpath(vim.fn.getenv("HOME"), ".bun", "bin")
+  .. delim
+  .. vim.fs.joinpath(vim.fn.stdpath("data"), "mason", "bin")
+  .. delim
+  .. vim.env.PATH

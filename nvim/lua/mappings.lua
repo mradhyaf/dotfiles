@@ -19,18 +19,20 @@ map("i", "<A-H>", "<Home>", { desc = "home" })
 map("i", "<A-L>", "<End>", { desc = "end" })
 
 map("i", "<C-c>", "<Esc>", { desc = "escape" })
+map("i", "<A-c>", "<Esc>", { desc = "escape" })
 map("t", "<A-c>", "<C-\\><C-n>", { desc = "exit terminal mode" })
 
 -- [Windows and Buffers]
-map("n", "<C-x>", "<cmd>q<CR>", { desc = "close window" })
+map("n", "<C-x>", "<cmd>q<CR>", { desc = "close current window" })
+map("n", "<C-S-X>", "<cmd>qa<CR>", { desc = "close all windows" })
 map("n", "<C-s>", "<cmd>w<CR>", { desc = "write current file" })
 
 -- [Editing]
-map("n", "<leader>/", "gcc", { remap = true, desc = "toggle comment" })
-map("v", "<leader>/", "gc", { remap = true, desc = "toggle comment" })
+map("n", "<A-/>", "gcc", { remap = true, desc = "toggle comment" })
+map("v", "<A-/>", "gc", { remap = true, desc = "toggle comment" })
 
 map("n", "<F3>", function()
-  require("conform").format { lsp_fallback = true }
+  require("conform").format({ lsp_fallback = true })
 end, { desc = "format file" })
 map("n", "<Esc>", cmd.noh, { desc = "general clear highlights" })
 
@@ -39,6 +41,15 @@ map("v", "K", ":m '<-2<CR>gv=gv", { desc = "shift line up" })
 
 -- [nvim-tree]
 map("n", "<C-e>", "<cmd>NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
+
+-- [Harpoon]
+local harpoon = require("harpoon")
+map("n", "<A-Tab>", function()
+  harpoon.ui:toggle_quick_menu(harpoon:list())
+end)
+map("n", "<A-a>", function()
+  harpoon:list():add()
+end)
 
 -- [Telescope]
 map("n", "<leader>t", "<cmd>Telescope<CR>", { desc = "Telescope" })
