@@ -1,0 +1,6 @@
+# Comments and blank lines are allowed.
+\.git
+\.gitignore
+\.gitmodules
+
+startup.sh

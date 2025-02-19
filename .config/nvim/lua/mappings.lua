@@ -2,24 +2,23 @@ local map = vim.keymap.set
 local cmd = vim.cmd
 
 -- [Cursor Movement]
-map("n", "<A-h>", "<C-w>h", { desc = "switch window left" })
-map("n", "<A-j>", "<C-w>j", { desc = "switch window down" })
-map("n", "<A-k>", "<C-w>k", { desc = "switch window up" })
-map("n", "<A-l>", "<C-w>l", { desc = "switch window right" })
+map("n", "<C-h>", "<C-w>h", { desc = "switch window left" })
+map("n", "<C-j>", "<C-w>j", { desc = "switch window down" })
+map("n", "<C-k>", "<C-w>k", { desc = "switch window up" })
+map("n", "<C-l>", "<C-w>l", { desc = "switch window right" })
 
 map("n", "J", "<C-d>", { desc = "scroll down" })
 map("n", "K", "<C-u>", { desc = "scroll up" })
 
-map("i", "<A-h>", "<Left>", { desc = "left" })
-map("i", "<A-j>", "<Down>", { desc = "down" })
-map("i", "<A-k>", "<Up>", { desc = "up" })
-map("i", "<A-l>", "<Right>", { desc = "right" })
+map("i", "<C-h>", "<Left>", { desc = "left" })
+map("i", "<C-j>", "<Down>", { desc = "down" })
+map("i", "<C-k>", "<Up>", { desc = "up" })
+map("i", "<C-l>", "<Right>", { desc = "right" })
 
-map("i", "<A-H>", "<Home>", { desc = "home" })
-map("i", "<A-L>", "<End>", { desc = "end" })
+map("i", "<C-H>", "<Home>", { desc = "home" })
+map("i", "<C-L>", "<End>", { desc = "end" })
 
 map("i", "<C-c>", "<Esc>", { desc = "escape" })
-map("i", "<A-c>", "<Esc>", { desc = "escape" })
 map("t", "<A-c>", "<C-\\><C-n>", { desc = "exit terminal mode" })
 
 -- [Windows and Buffers]
@@ -28,8 +27,8 @@ map("n", "<C-S-X>", "<cmd>qa<CR>", { desc = "close all windows" })
 map("n", "<C-s>", "<cmd>w<CR>", { desc = "write current file" })
 
 -- [Editing]
-map("n", "<A-/>", "gcc", { remap = true, desc = "toggle comment" })
-map("v", "<A-/>", "gc", { remap = true, desc = "toggle comment" })
+map("n", "<C-/>", "gcc", { remap = true, desc = "toggle comment" })
+map("v", "<C-/>", "gc", { remap = true, desc = "toggle comment" })
 
 map("n", "<F3>", function()
   require("conform").format({ lsp_fallback = true })
