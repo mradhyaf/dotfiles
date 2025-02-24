@@ -3,8 +3,7 @@
 ## Installation
 clone repo to home and use stow for installation.
 ```sh
-$ cd ~
-$ git clone [this_repo]
-$ cd dotfiles
+$ git clone https://github.com/mradhyaf/dotfiles.git ~/.dotfiles
+$ cd ~/.dotfiles
 $ stow {nvim,foot,[other_packages]}
 ```
