@@ -1,0 +1,37 @@
+""" Map leader to space ---------------------
+let mapleader=" "
+
+set scrolloff=5
+set scroll=8
+set visualbell
+set incsearch
+set showmode
+set nu
+
+""" Navigation
+"map <C-j> <Action>(EditorDown)
+"map <C-k> <Action>(EditorUp)
+map <C-h> <Left>
+map <C-l> <Right>
+sethandler <C-j> a:ide
+sethandler <C-k> a:ide
+map J <C-d>
+map K <C-u>
+map <leader><Tab> <Action>(Switcher)
+
+
+""" Tab shortcuts
+map <C-x> <Action>(CloseContent)
+map H <Action>(PreviousTab)
+map L <Action>(NextTab)
+
+""" Find
+map <leader>fa <Action>(SearchEverywhere)
+map <leader>ff <Action>(GotoFile)
+map <leader>fg <Action>(TextSearchAction)
+
+""" Code Actions
+map <leader>ca <Action>(ShowIntentionActions)
+map <leader>cf <Action>(ReformatCode)
+
+"IdeaVim.ReloadVimRc.reload
