@@ -1,6 +1,7 @@
 [ActivityManager]
 _k_friendly_name=Activity Manager
 switch-to-activity-36c59a53-0994-4c04-a942-e319ec897a8b=none,none,Switch to activity "Default"
+switch-to-activity-5fadf11e-1b87-4a34-b940-334054179047=none,none,Switch to activity "Default"
 switch-to-activity-f9805315-731e-4fe6-9813-7172743a9d5d=none,none,Switch to activity "chilling"
 
 [KDE Keyboard Layout Switcher]
@@ -12,12 +13,6 @@ _k_friendly_name=Keyboard Layout Switcher
 [kaccess]
 Toggle Screen Reader On and Off=Meta+Alt+S,Meta+Alt+S,Toggle Screen Reader On and Off
 _k_friendly_name=Accessibility
-
-[kcm_touchpad]
-Disable Touchpad=Touchpad Off,Touchpad Off,
-Enable Touchpad=Touchpad On,Touchpad On,
-Toggle Touchpad=Touchpad Toggle\tMeta+Ctrl+Zenkaku Hankaku,Touchpad Toggle\tTouchpad Toggle\tMeta+Ctrl+Touchpad Toggle\tMeta+Ctrl+Zenkaku Hankaku,
-_k_friendly_name=Touchpad
 
 [kmix]
 _k_friendly_name=Audio Volume
@@ -32,7 +27,7 @@ mute=Volume Mute,Volume Mute,Mute
 
 [ksmserver]
 Halt Without Confirmation=none,,Shut Down Without Confirmation
-Lock Session=Screensaver\tMeta+Ctrl+L,Meta+L\tScreensaver,Lock Session
+Lock Session=Meta+Ctrl+Alt+L\tScreensaver\tMeta+Ctrl+L,Meta+L\tScreensaver,Lock Session
 Log Out=Ctrl+Alt+Del,Ctrl+Alt+Del,Show Logout Screen
 Log Out Without Confirmation=none,,Log Out Without Confirmation
 LogOut=none,,Log Out
@@ -115,14 +110,14 @@ Switch to Screen to the Left=none,,Switch to Screen to the Left
 Switch to Screen to the Right=none,,Switch to Screen to the Right
 Toggle Night Color=none,none,Suspend/Resume Night Light
 Toggle Window Raise/Lower=none,,Toggle Window Raise/Lower
-Walk Through Windows=Alt+Tab,Alt+Tab,Walk Through Windows
-Walk Through Windows (Reverse)=Alt+Shift+Tab,Alt+Shift+Tab,Walk Through Windows (Reverse)
-Walk Through Windows Alternative=Meta+L,,Walk Through Windows Alternative
-Walk Through Windows Alternative (Reverse)=Meta+H,,Walk Through Windows Alternative (Reverse)
-Walk Through Windows of Current Application=none,Alt+`,Walk Through Windows of Current Application
-Walk Through Windows of Current Application (Reverse)=none,Alt+~,Walk Through Windows of Current Application (Reverse)
-Walk Through Windows of Current Application Alternative=none,,Walk Through Windows of Current Application Alternative
-Walk Through Windows of Current Application Alternative (Reverse)=none,,Walk Through Windows of Current Application Alternative (Reverse)
+Walk Through Windows=Alt+Tab,Meta+Tab\tAlt+Tab,Walk Through Windows
+Walk Through Windows (Reverse)=Alt+Shift+Tab,Meta+Shift+Tab\tAlt+Shift+Tab,Walk Through Windows (Reverse)
+Walk Through Windows Alternative=Meta+L,none,Walk Through Windows Alternative
+Walk Through Windows Alternative (Reverse)=Meta+H,none,Walk Through Windows Alternative (Reverse)
+Walk Through Windows of Current Application=none,Meta+`\tAlt+`,Walk Through Windows of Current Application
+Walk Through Windows of Current Application (Reverse)=none,Meta+~\tAlt+~,Walk Through Windows of Current Application (Reverse)
+Walk Through Windows of Current Application Alternative=none,none,Walk Through Windows of Current Application Alternative
+Walk Through Windows of Current Application Alternative (Reverse)=none,none,Walk Through Windows of Current Application Alternative (Reverse)
 Window Above Other Windows=none,,Keep Window Above Others
 Window Below Other Windows=none,,Keep Window Below Others
 Window Close=Meta+Q,Alt+F4,Close Window
@@ -251,6 +246,7 @@ clipboard_action=Meta+Ctrl+X,Meta+Ctrl+X,Automatic Action Popup Menu
 cycle-panels=Meta+Alt+P,Meta+Alt+P,Move keyboard focus between panels
 cycleNextAction=none,,Next History Item
 cyclePrevAction=none,,Previous History Item
+edit_clipboard=none,,Edit Contents…
 manage activities=none,Meta+Q,Show Activity Switcher
 next activity=Meta+A,none,Walk through activities
 previous activity=Meta+Shift+A,none,Walk through activities (Reverse)
@@ -280,6 +276,9 @@ _launch=Meta+.
 
 [services][org.kde.spectacle.desktop]
 RecordWindow=none
+
+[services][org.kde.touchpadshortcuts.desktop]
+ToggleTouchpad=Touchpad Toggle\tMeta+Ctrl+Zenkaku Hankaku
 
 [services][zen-beta.desktop]
 _launch=Meta+B

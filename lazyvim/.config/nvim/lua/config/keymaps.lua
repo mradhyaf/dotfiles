@@ -5,8 +5,8 @@
 local map = vim.keymap.set
 
 -- Shift-scrolling
-map("n", "J", "<C-d>", { desc = "Scroll down" })
-map("n", "K", "<C-u>", { desc = "Scroll up" })
+map("", "J", "<C-d>", { desc = "Scroll down" })
+map("", "K", "<C-u>", { desc = "Scroll up" })
 
 -- Insert-mode keymaps
 map("i", "<C-h>", "<Left>", { desc = "Left" })
