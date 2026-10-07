@@ -60,3 +60,11 @@ cpr() {
 mvr() {
   rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 --remove-source-files "$@"
 }
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# >>> Codex installer >>>
+export PATH="/home/mradhyaf/.local/bin:$PATH"
+# <<< Codex installer <<<
